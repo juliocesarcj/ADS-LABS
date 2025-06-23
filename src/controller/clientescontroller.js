@@ -3,7 +3,10 @@ const clientesService = require('../service/clientesService');
 async function getClientes(req, res) {
   try {
     const clientes = await clientesService.listarClientes();
-    res.json(clientes);
+    res.status(201).json({
+      nome: 'nome:',
+      cpf: 'cpf:'
+    });
   } catch (error) {
     res.status(500).json({ erro: error.message });
   }
@@ -13,7 +16,10 @@ async function creatCliente(req, res) {
   try {
     const { nome, cpf } = req.body;
     const cliente = await clientesService.criarCliente(nome, cpf);
-    res.status(201).json(cliente);
+    res.status(201).json({
+      nome: 'nome:',
+      cpf: 'cpf:'
+    });
   } catch (error) {
     res.status(500).json({ erro: error.message });
   }

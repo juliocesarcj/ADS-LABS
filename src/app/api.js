@@ -2,13 +2,12 @@ const express = require('express');
 const clienteRouter = require ('../router/clientesRouter')
 const pratoRouter = require('../router/pratosRouter');
 const sequelize = require('../database/db');
-require('dotenv').config();
 const app = express();
 app.use(express.json());
+require('dotenv').config();
 
 
 
-app.use('/clientes', clienteRouter);
 app.use('/pratos', pratoRouter);
 
 const clientesRouter = require ('../router/clientesRouter');
